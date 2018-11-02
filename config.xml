@@ -8,6 +8,7 @@
         Mediabeef Team
     </author>
     <content src="index.html" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <access origin="*" />
     <preference name="windows-target-version" value="10.0" />
     <engine name="android" spec="^6.3.0" />
