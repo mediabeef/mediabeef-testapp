@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.mediabeef.testapp" version="0.0.2" xmlns="http://www.w3.org/ns/widgets">
+    <name>MediabeefTestapp</name>
+    <description>
+        An app for mediabeef testers.
+    </description>
+    <author email="mike@mediabeef.com" href="http://mediabeef.com">
+        Mediabeef Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="windows-target-version" value="10.0" />
+    <engine name="android" spec="^6.3.0" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
+    <plugin name="cordova-plugin-x-toast" spec="^2.7.0" />
+</widget>
