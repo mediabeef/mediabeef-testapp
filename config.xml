@@ -14,4 +14,15 @@
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
     <plugin name="cordova-plugin-x-toast" spec="^2.7.0" />
+    <plugin name="cordova-plugin-saralweb-background-geolocation" spec="^2.4.3">
+        <variable name="ICON" value="@mipmap/icon" />
+        <variable name="SMALL_ICON" value="@mipmap/icon" />
+        <variable name="ACCOUNT_NAME" value="@string/app_name" />
+        <variable name="ACCOUNT_LABEL" value="@string/app_name" />
+        <variable name="ACCOUNT_TYPE" value="$PACKAGE_NAME.account" />
+        <variable name="CONTENT_AUTHORITY" value="$PACKAGE_NAME" />
+        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="This app requires background tracking enabled" />
+        <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="This app requires background tracking enabled" />
+        <variable name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" value="Always use is required for background location tracking" />
+    </plugin>
 </widget>
