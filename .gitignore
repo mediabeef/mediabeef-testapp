@@ -1,2 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
-/.idea/php.xml
+/*
+
+!/res
+!/scripts
+!/www
+!.gitignore
+!*.md
+!config.xml
+/**/.DS_Store
+*.swp
