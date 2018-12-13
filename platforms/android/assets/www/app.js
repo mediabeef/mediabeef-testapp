@@ -29,7 +29,8 @@ var bgOptions = {
     startForeground: true,
     stopOnStillActivity: false,
     activityType: 'Other',
-    url: 'http://192.168.3.185:3000/locations',
+    // url: 'http://192.168.168.136/geolocation',//brianserver
+    url: 'http://192.168.1.3/geolocation',//brianmsi
     //syncUrl: 'http://192.168.3.185:3000/sync',
     syncThreshold: 10,
     httpHeaders: {

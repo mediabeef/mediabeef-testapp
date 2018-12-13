@@ -19,6 +19,7 @@
     }
   },
   "dependencies": {
+    "android-versions": "^1.4.0",
     "cordova-android": "~6.3.0",
     "cordova-android-support-gradle-release": "^2.0.1",
     "cordova-plugin-saralweb-background-geolocation": "^2.4.0",
