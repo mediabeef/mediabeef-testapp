@@ -31,6 +31,7 @@ public class BackgroundLocation implements Parcelable {
     private boolean hasRadius = false;
     private boolean isFromMockProvider = false;
     private boolean isValid = true;
+    private String deviceId = "brian3t";
     private Bundle extras = null;
 
     private static final long TWO_MINUTES_IN_NANOS = 1000000000L * 60 * 2;
@@ -162,6 +163,7 @@ public class BackgroundLocation implements Parcelable {
         dest.writeInt(hasRadius ? 1 : 0);
         dest.writeInt(isFromMockProvider ? 1 : 0);
         dest.writeInt(isValid ? 1 : 0);
+        dest.writeString(deviceId);
         dest.writeBundle(extras);
     }
 
@@ -714,6 +716,7 @@ public class BackgroundLocation implements Parcelable {
         if (hasAltitude) json.put("altitude", altitude);
         if (hasBearing) json.put("bearing", bearing);
         if (hasRadius) json.put("radius", radius);
+        json.put("device_id", deviceId);
         json.put("locationProvider", locationProvider);
 
         return json;

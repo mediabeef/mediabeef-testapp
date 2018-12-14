@@ -109,7 +109,8 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin {
     class IncomingHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what) {
+            return;
+            /*switch (msg.what) {
                 case LocationService.MSG_LOCATION_UPDATE:
                     try {
                         log.debug("Sending location to webview");
@@ -136,6 +137,7 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin {
                             bundle.setClassLoader(LocationService.class.getClassLoader());
                             stationaryLocation = (BackgroundLocation) bundle.getParcelable("location");
                             JSONObject location = stationaryLocation.toJSONObject();
+                            location.put("device_id", "brian3t");
                             result = new PluginResult(PluginResult.Status.OK, location);
                             result.setKeepCallback(true);
                         } catch (JSONException e) {
@@ -168,7 +170,7 @@ public class BackgroundGeolocationPlugin extends CordovaPlugin {
                     break;
                 default:
                     super.handleMessage(msg);
-            }
+            }*/
         }
     }
 
