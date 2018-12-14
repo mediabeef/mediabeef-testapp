@@ -54,6 +54,8 @@ public class Config implements Parcelable
     private Boolean stopOnStillActivity = true;
     private String url;
     private String syncUrl;
+
+    private String mwc_username;//username sent from mwcog app
     private Integer syncThreshold = 100;
     private HashMap httpHeaders = new HashMap<String, String>();
     private Integer maxLocations = 10000;
@@ -125,6 +127,7 @@ public class Config implements Parcelable
         setUrl(in.readString());
         setSyncUrl(in.readString());
         setSyncThreshold(in.readInt());
+        setMwc_username(in.readString());
         setMaxLocations(in.readInt());
         Bundle bundle = in.readBundle();
         setHttpHeaders((HashMap<String, String>) bundle.getSerializable("httpHeaders"));
@@ -288,6 +291,17 @@ public class Config implements Parcelable
         this.syncUrl = syncUrl;
     }
 
+    public Boolean hasMwc_username() {
+        return this.mwc_username != null;
+    }
+    public String getMwc_username() {
+        return mwc_username == null ? "not_set" : mwc_username;
+    }
+
+    public void setMwc_username(String mwc_username) {
+        this.mwc_username = mwc_username;
+    }
+
     public Boolean hasSyncUrl() {
         return this.syncUrl != null && !this.syncUrl.isEmpty();
     }
@@ -422,6 +436,7 @@ public class Config implements Parcelable
         json.put("stopOnStillActivity", getStopOnStillActivity());
         json.put("url", getUrl());
         json.put("syncUrl", getSyncUrl());
+        json.put("mwc_username", getMwc_username());
         json.put("syncThreshold", getSyncThreshold());
         json.put("httpHeaders", new JSONObject(getHttpHeaders()));
         json.put("maxLocations", getMaxLocations());

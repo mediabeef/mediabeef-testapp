@@ -9,6 +9,7 @@ import android.support.v4.util.TimeUtils;
 
 import org.json.JSONObject;
 import org.json.JSONException;
+import android.provider.Settings.Secure;
 
 public class BackgroundLocation implements Parcelable {
     private Long locationId = null;
@@ -31,6 +32,7 @@ public class BackgroundLocation implements Parcelable {
     private boolean hasRadius = false;
     private boolean isFromMockProvider = false;
     private boolean isValid = true;
+    private String mwc_username = null;
     private Bundle extras = null;
 
     private static final long TWO_MINUTES_IN_NANOS = 1000000000L * 60 * 2;

@@ -1,5 +1,6 @@
 package com.saralweb.bgloc.data;
 
+import android.content.Context;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,8 +10,12 @@ import android.support.v4.util.TimeUtils;
 
 import org.json.JSONObject;
 import org.json.JSONException;
+import android.provider.Settings.Secure;
+
+import com.saralweb.bgloc.Config;
 
 public class BackgroundLocation implements Parcelable {
+    private ConfigurationDAO configDAO;
     private Long locationId = null;
     private Integer locationProvider = null;
     private Long batchStartMillis = null;
@@ -31,8 +36,9 @@ public class BackgroundLocation implements Parcelable {
     private boolean hasRadius = false;
     private boolean isFromMockProvider = false;
     private boolean isValid = true;
-    private String deviceId = "brian3t";
+    private String deviceId = null;
     private Bundle extras = null;
+    private org.slf4j.Logger log;
 
     private static final long TWO_MINUTES_IN_NANOS = 1000000000L * 60 * 2;
 
@@ -703,9 +709,16 @@ public class BackgroundLocation implements Parcelable {
 
     /**
      * Returns location as JSON object.
-     * @throws JSONException
+     * @throws JSONException fail to put json??
      */
     public JSONObject toJSONObject() throws JSONException {
+        Config config = null;
+        try {
+            config = configDAO.retrieveConfiguration();
+        } catch (JSONException e) {
+            log.error("Error retrieving config: {}", e.getMessage());
+        }
+
         JSONObject json = new JSONObject();
         json.put("provider", provider);
         json.put("time", time);
@@ -716,7 +729,9 @@ public class BackgroundLocation implements Parcelable {
         if (hasAltitude) json.put("altitude", altitude);
         if (hasBearing) json.put("bearing", bearing);
         if (hasRadius) json.put("radius", radius);
-        json.put("device_id", deviceId);
+        if (config != null){
+            json.put("device_id", config.hasMwc_username() ? config.getMwc_username() : "");
+        }
         json.put("locationProvider", locationProvider);
 
         return json;

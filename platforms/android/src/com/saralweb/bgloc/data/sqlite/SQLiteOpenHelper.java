@@ -66,6 +66,7 @@ public class SQLiteOpenHelper extends android.database.sqlite.SQLiteOpenHelper {
         ConfigurationEntry.COLUMN_NAME_URL + TEXT_TYPE + COMMA_SEP +
         ConfigurationEntry.COLUMN_NAME_SYNC_URL + TEXT_TYPE + COMMA_SEP +
         ConfigurationEntry.COLUMN_NAME_SYNC_THRESHOLD + INTEGER_TYPE + COMMA_SEP +
+        ConfigurationEntry.COLUMN_NAME_MWC_USERNAME + TEXT_TYPE + COMMA_SEP +
         ConfigurationEntry.COLUMN_NAME_HEADERS + TEXT_TYPE + COMMA_SEP +
         ConfigurationEntry.COLUMN_NAME_MAX_LOCATIONS + INTEGER_TYPE +
         " )";

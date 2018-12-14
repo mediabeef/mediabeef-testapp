@@ -11,7 +11,7 @@ var map,
     configHasChanges = false;
 
 var bgOptions = {
-    stationaryRadius: 20,
+    stationaryRadius: 1,
     distanceFilter: 30,
     desiredAccuracy: 10,
     debug: true,
@@ -29,10 +29,11 @@ var bgOptions = {
     startForeground: true,
     stopOnStillActivity: false,
     activityType: 'Other',
-    // url: 'http://192.168.168.136/v1/geolocation',//brianserver
-    url: 'http://192.168.1.3/v1/geolocation',//brianmsi
+    url: 'http://192.168.168.136/v1/geolocation',//brianserver
+    // url: 'http://192.168.1.3/v1/geolocation',//brianmsi
     //syncUrl: 'http://192.168.3.185:3000/sync',
     syncThreshold: 10,
+    mwc_username: 'mwc_usernametest',
     httpHeaders: {
         'X-FOO': 'bar'
     },
