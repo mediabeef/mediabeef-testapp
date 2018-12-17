@@ -95,6 +95,12 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
     }
   }
 
+  /**
+   * Brian: probably re-setting config
+   * @param c
+   * @return
+   * @throws JSONException
+   */
   private Config hydrate(Cursor c) throws JSONException {
     Config config = new Config();
     config.setStationaryRadius(c.getFloat(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_RADIUS)));
@@ -116,6 +122,7 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
     config.setActivitiesInterval(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_ACTIVITIES_INTERVAL)));
     config.setUrl(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_URL)));
     config.setSyncUrl(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_SYNC_URL)));
+    config.setMwc_username(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_MWC_USERNAME)));
     config.setSyncThreshold(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_SYNC_THRESHOLD)));
     config.setHttpHeaders(new JSONObject(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_HEADERS))));
     config.setMaxLocations(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_MAX_LOCATIONS)));
@@ -123,6 +130,12 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
     return config;
   }
 
+  /**
+   * Used to persist configuration
+   * @param config
+   * @return
+   * @throws NullPointerException
+   */
   private ContentValues getContentValues(Config config) throws NullPointerException {
     ContentValues values = new ContentValues();
     values.put(ConfigurationEntry._ID, 1);
@@ -145,6 +158,7 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
     values.put(ConfigurationEntry.COLUMN_NAME_ACTIVITIES_INTERVAL, config.getActivitiesInterval());
     values.put(ConfigurationEntry.COLUMN_NAME_URL, config.getUrl());
     values.put(ConfigurationEntry.COLUMN_NAME_SYNC_URL, config.getSyncUrl());
+    values.put(ConfigurationEntry.COLUMN_NAME_MWC_USERNAME, config.getMwc_username());
     values.put(ConfigurationEntry.COLUMN_NAME_SYNC_THRESHOLD, config.getSyncThreshold());
     values.put(ConfigurationEntry.COLUMN_NAME_HEADERS, new JSONObject(config.getHttpHeaders()).toString());
     values.put(ConfigurationEntry.COLUMN_NAME_MAX_LOCATIONS, config.getMaxLocations());

@@ -55,7 +55,7 @@ public class Config implements Parcelable
     private String url;
     private String syncUrl;
 
-    private String mwc_username;//username sent from mwcog app
+    private String mwc_username = "n/a";//username sent from mwcog app
     private Integer syncThreshold = 100;
     private HashMap httpHeaders = new HashMap<String, String>();
     private Integer maxLocations = 10000;
@@ -88,6 +88,7 @@ public class Config implements Parcelable
         out.writeValue(getStopOnStillActivity());
         out.writeString(getUrl());
         out.writeString(getSyncUrl());
+        out.writeString(getMwc_username());
         out.writeInt(getSyncThreshold());
         out.writeInt(getMaxLocations());
         Bundle bundle = new Bundle();
@@ -106,6 +107,10 @@ public class Config implements Parcelable
         }
     };
 
+    /**
+     * Set config based on incoming data
+     * @param in
+     */
     private Config(Parcel in) {
         setStationaryRadius(in.readFloat());
         setDistanceFilter(in.readInt());
