@@ -16,12 +16,17 @@ import java.util.Collection;
 
 public class SQLiteLocationDAO implements LocationDAO {
   private SQLiteDatabase db;
+  public Context context;
 
   public SQLiteLocationDAO(Context context) {
     SQLiteOpenHelper helper = SQLiteOpenHelper.getHelper(context);
     this.db = helper.getWritableDatabase();
+    this.context = context;
   }
 
+  public Context getContext(){
+    return this.context;
+  }
   public SQLiteLocationDAO(SQLiteDatabase db) {
     this.db = db;
   }

@@ -7,7 +7,7 @@ import android.app.Application;
  */
 public class ResourceResolver {
 
-    private Application app;
+    public Application app;
 
     private ResourceResolver(Application app) {
         this.app = app;

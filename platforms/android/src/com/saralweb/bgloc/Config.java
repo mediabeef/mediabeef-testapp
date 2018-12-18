@@ -131,8 +131,8 @@ public class Config implements Parcelable
         setStopOnStillActivity((Boolean) in.readValue(null));
         setUrl(in.readString());
         setSyncUrl(in.readString());
-        setSyncThreshold(in.readInt());
         setMwc_username(in.readString());
+        setSyncThreshold(in.readInt());
         setMaxLocations(in.readInt());
         Bundle bundle = in.readBundle();
         setHttpHeaders((HashMap<String, String>) bundle.getSerializable("httpHeaders"));
