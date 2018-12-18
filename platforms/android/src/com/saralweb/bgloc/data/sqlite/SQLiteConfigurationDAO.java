@@ -52,7 +52,7 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
       ConfigurationEntry.COLUMN_NAME_URL,
       ConfigurationEntry.COLUMN_NAME_SYNC_URL,
       ConfigurationEntry.COLUMN_NAME_SYNC_THRESHOLD,
-      ConfigurationEntry.COLUMN_NAME_MWC_USERNAME,
+      ConfigurationEntry.COLUMN_NAME_COMMUTER_ID,
       ConfigurationEntry.COLUMN_NAME_HEADERS,
       ConfigurationEntry.COLUMN_NAME_MAX_LOCATIONS
     };
@@ -122,7 +122,7 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
     config.setActivitiesInterval(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_ACTIVITIES_INTERVAL)));
     config.setUrl(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_URL)));
     config.setSyncUrl(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_SYNC_URL)));
-    config.setMwc_username(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_MWC_USERNAME)));
+    config.setCommuter_id(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_COMMUTER_ID)));
     config.setSyncThreshold(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_SYNC_THRESHOLD)));
     config.setHttpHeaders(new JSONObject(c.getString(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_HEADERS))));
     config.setMaxLocations(c.getInt(c.getColumnIndex(ConfigurationEntry.COLUMN_NAME_MAX_LOCATIONS)));
@@ -158,7 +158,7 @@ public class SQLiteConfigurationDAO implements ConfigurationDAO {
     values.put(ConfigurationEntry.COLUMN_NAME_ACTIVITIES_INTERVAL, config.getActivitiesInterval());
     values.put(ConfigurationEntry.COLUMN_NAME_URL, config.getUrl());
     values.put(ConfigurationEntry.COLUMN_NAME_SYNC_URL, config.getSyncUrl());
-    values.put(ConfigurationEntry.COLUMN_NAME_MWC_USERNAME, config.getMwc_username());
+    values.put(ConfigurationEntry.COLUMN_NAME_COMMUTER_ID, config.getCommuter_id());
     values.put(ConfigurationEntry.COLUMN_NAME_SYNC_THRESHOLD, config.getSyncThreshold());
     values.put(ConfigurationEntry.COLUMN_NAME_HEADERS, new JSONObject(config.getHttpHeaders()).toString());
     values.put(ConfigurationEntry.COLUMN_NAME_MAX_LOCATIONS, config.getMaxLocations());

@@ -31,7 +31,7 @@ public final class SQLiteConfigurationContract {
         public static final String COLUMN_NAME_URL = "url";
         public static final String COLUMN_NAME_SYNC_URL = "sync_url";
         public static final String COLUMN_NAME_SYNC_THRESHOLD = "sync_threshold";
-        public static final String COLUMN_NAME_MWC_USERNAME = "mwc_username";
+        public static final String COLUMN_NAME_COMMUTER_ID = "commuter_id";
         public static final String COLUMN_NAME_HEADERS = "http_headers";
         public static final String COLUMN_NAME_MAX_LOCATIONS = "max_locations";
     }

@@ -45,7 +45,7 @@ public class BackgroundLocation implements Parcelable {
     public BackgroundLocation() {}
 
     public BackgroundLocation(Integer locationProvider, Location location) {
-        configDAO = DAOFactory.createConfigurationDAO(getApplication().getApplicationContext());
+//        configDAO = DAOFactory.createConfigurationDAO(getApplication().getApplicationContext());
 
         this.locationProvider = locationProvider;
         provider = location.getProvider();
@@ -731,10 +731,6 @@ public class BackgroundLocation implements Parcelable {
         if (hasAltitude) json.put("altitude", altitude);
         if (hasBearing) json.put("bearing", bearing);
         if (hasRadius) json.put("radius", radius);
-//        if (config != null){
-        json.put("mwc_username", "mwc_username_test735");
-//            json.put("device_id", config.hasMwc_username() ? config.getMwc_username() : "");
-//        }
         json.put("locationProvider", locationProvider);
 
         return json;

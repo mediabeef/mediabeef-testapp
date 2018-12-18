@@ -33,7 +33,7 @@ var bgOptions = {
     // url: 'http://192.168.1.3/v1/geolocation',//brianmsi
     //syncUrl: 'http://192.168.3.185:3000/sync',
     syncThreshold: 10,
-    mwc_username: 'mwc_usernametest',
+    commuter_id: 13579,
     httpHeaders: {
         'X-FOO': 'bar'
     },

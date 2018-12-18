@@ -55,7 +55,7 @@ public class Config implements Parcelable
     private String url;
     private String syncUrl;
 
-    private String mwc_username = "n/a";//username sent from mwcog app
+    private Integer commuter_id = null;//commuter_id sent from mwcog app
     private Integer syncThreshold = 100;
     private HashMap httpHeaders = new HashMap<String, String>();
     private Integer maxLocations = 10000;
@@ -88,7 +88,7 @@ public class Config implements Parcelable
         out.writeValue(getStopOnStillActivity());
         out.writeString(getUrl());
         out.writeString(getSyncUrl());
-        out.writeString(getMwc_username());
+        out.writeInt(getCommuter_id());
         out.writeInt(getSyncThreshold());
         out.writeInt(getMaxLocations());
         Bundle bundle = new Bundle();
@@ -131,7 +131,7 @@ public class Config implements Parcelable
         setStopOnStillActivity((Boolean) in.readValue(null));
         setUrl(in.readString());
         setSyncUrl(in.readString());
-        setMwc_username(in.readString());
+        setCommuter_id(in.readInt());
         setSyncThreshold(in.readInt());
         setMaxLocations(in.readInt());
         Bundle bundle = in.readBundle();
@@ -296,15 +296,15 @@ public class Config implements Parcelable
         this.syncUrl = syncUrl;
     }
 
-    public Boolean hasMwc_username() {
-        return this.mwc_username != null;
+    public Boolean hasCommuter_id() {
+        return this.commuter_id != null;
     }
-    public String getMwc_username() {
-        return mwc_username == null ? "not_set" : mwc_username;
+    public Integer getCommuter_id() {
+        return commuter_id == null ? -1 : commuter_id;
     }
 
-    public void setMwc_username(String mwc_username) {
-        this.mwc_username = mwc_username;
+    public void setCommuter_id(Integer commuter_id) {
+        this.commuter_id = commuter_id;
     }
 
     public Boolean hasSyncUrl() {
@@ -441,7 +441,7 @@ public class Config implements Parcelable
         json.put("stopOnStillActivity", getStopOnStillActivity());
         json.put("url", getUrl());
         json.put("syncUrl", getSyncUrl());
-        json.put("mwc_username", getMwc_username());
+        json.put("commuter_id", getCommuter_id());
         json.put("syncThreshold", getSyncThreshold());
         json.put("httpHeaders", new JSONObject(getHttpHeaders()));
         json.put("maxLocations", getMaxLocations());

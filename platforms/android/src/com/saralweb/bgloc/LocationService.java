@@ -503,6 +503,8 @@ public class LocationService extends Service {
             for (BackgroundLocation location : locations) {
                 try {
                     JSONObject jsonLocation = location.toJSONObject();
+                    //here append commuter_id to post back
+                    jsonLocation.put("commuter_id", config.getCommuter_id());
                     jsonLocations.put(jsonLocation);
                 } catch (JSONException e) {
                     log.warn("Location to json failed: {}", location.toString());
