@@ -52,17 +52,17 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Tracking permission is required for app to work</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Tracking permission is required for app to work</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Tracking permission is required for app to work</string>
     <key>UIBackgroundModes</key>
     <array>
       <string>location</string>
       <string>fetch</string>
     </array>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app requires background location tracking</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app requires background location tracking</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Always use is required for background location tracking</string>
     <key>CFBundleURLTypes</key>
     <array>
       <dict>

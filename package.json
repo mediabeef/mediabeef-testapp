@@ -9,13 +9,19 @@
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-saralweb-background-geolocation": {
-        "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
-        "LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
-        "LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION": "Tracking permission is required for app to work"
-      },
       "cordova-android-support-gradle-release": {
         "ANDROID_SUPPORT_VERSION": "27.+"
+      },
+      "cordova-plugin-mediabeef-background-geolocation": {
+        "ICON": "@mipmap/icon",
+        "SMALL_ICON": "@mipmap/icon",
+        "ACCOUNT_NAME": "@string/app_name",
+        "ACCOUNT_LABEL": "@string/app_name",
+        "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+        "CONTENT_AUTHORITY": "$PACKAGE_NAME",
+        "LOCATION_ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
+        "LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION": "This app requires background location tracking",
+        "LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION": "Always use is required for background location tracking"
       }
     }
   },
@@ -24,7 +30,7 @@
     "cordova-android": "~6.3.0",
     "cordova-android-support-gradle-release": "^2.0.1",
     "cordova-ios": "^4.5.5",
-    "cordova-plugin-saralweb-background-geolocation": "^2.4.0",
+    "cordova-plugin-mediabeef-background-geolocation": "git+https://github.com/mediabeef/mwcog-phonegap-background-geo.git",
     "cordova-plugin-whitelist": "1"
   }
 }

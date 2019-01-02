@@ -92,8 +92,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "cordova-plugin-saralweb-background-geolocation/bgsampleapp-logtofile.gradle"
 apply from: "cordova-android-support-gradle-release/bgsampleapp-cordova-android-support-gradle-release.gradle"
+apply from: "cordova-plugin-mediabeef-background-geolocation/bgsampleapp-logtofile.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()

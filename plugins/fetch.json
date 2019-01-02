@@ -7,18 +7,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-saralweb-background-geolocation": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-saralweb-background-geolocation@^2.4.0"
-    },
-    "is_top_level": true,
-    "variables": {
-      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
-      "LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
-      "LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION": "Tracking permission is required for app to work"
-    }
-  },
   "cordova-android-support-gradle-release": {
     "source": {
       "type": "registry",
@@ -28,5 +16,13 @@
     "variables": {
       "ANDROID_SUPPORT_VERSION": "27.+"
     }
+  },
+  "cordova-plugin-mediabeef-background-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/mediabeef/mwcog-phonegap-background-geo.git"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

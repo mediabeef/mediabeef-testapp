@@ -47,13 +47,19 @@
     </platform>
     <engine name="android" spec="~6.3.0" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <plugin name="cordova-plugin-saralweb-background-geolocation" spec="^2.4.0">
-        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Tracking permission is required for app to work" />
-        <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="Tracking permission is required for app to work" />
-        <variable name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" value="Tracking permission is required for app to work" />
-    </plugin>
     <plugin name="cordova-android-support-gradle-release" spec="^2.0.1">
         <variable name="ANDROID_SUPPORT_VERSION" value="27.+" />
     </plugin>
     <engine name="ios" spec="~4.5.5" />
+    <plugin name="cordova-plugin-mediabeef-background-geolocation" spec="https://github.com/mediabeef/mwcog-phonegap-background-geo.git">
+        <variable name="ICON" value="@mipmap/icon" />
+        <variable name="SMALL_ICON" value="@mipmap/icon" />
+        <variable name="ACCOUNT_NAME" value="@string/app_name" />
+        <variable name="ACCOUNT_LABEL" value="@string/app_name" />
+        <variable name="ACCOUNT_TYPE" value="$PACKAGE_NAME.account" />
+        <variable name="CONTENT_AUTHORITY" value="$PACKAGE_NAME" />
+        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="This app requires background location tracking" />
+        <variable name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" value="This app requires background location tracking" />
+        <variable name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" value="Always use is required for background location tracking" />
+    </plugin>
 </widget>

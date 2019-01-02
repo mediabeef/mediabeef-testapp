@@ -10,13 +10,13 @@
     "cordova-android-support-gradle-release": {
       "PACKAGE_NAME": "com.mediabeef.bggeotestapp"
     },
-    "cordova-plugin-saralweb-background-geolocation": {
-      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
-      "LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
-      "LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION": "Tracking permission is required for app to work",
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.mediabeef.bggeotestapp"
     },
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-mediabeef-background-geolocation": {
+      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
+      "LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION": "This app requires background location tracking",
+      "LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION": "Always use is required for background location tracking",
       "PACKAGE_NAME": "com.mediabeef.bggeotestapp"
     }
   },
